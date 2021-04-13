@@ -8,8 +8,6 @@
 
 from qiime2.plugin import (Plugin, Citations)
 
-import q2_plugin_name
-
 from q2_plugin_name import __version__
 
 citations = Citations.load('citations.bib', package='q2_plugin_name')
