@@ -7,5 +7,6 @@ To use this template for a new plugin creation, you'll need to adjust the follow
 - add versioneer support:
     - install versioneer [link](https://github.com/python-versioneer/python-versioneer): `pip install versioneer`
     - run `versioneer install`
+    - add the `flake8: noqa` flag on top of the versioneer.py file 
 
 Enjoy!
