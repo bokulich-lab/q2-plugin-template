@@ -16,11 +16,11 @@ Enjoy!
 
 ### Testing conda builds
 Follow these steps to test a conda build locally:
-1. Make sure to add the required dependencies in the [ci/recipes/meta.yaml](ci/recipes/meta.yaml) file
-2. Run the [test_build.sh](ci/recipes/test_build.sh) script to attempt a local build:
+1. Make sure to add the required dependencies in the [ci/recipe/meta.yaml](./ci/recipe/meta.yaml) file
+2. Run the [test_build.sh](./ci/recipe/test_build.sh) script to attempt a local build:
     * you can specify build platform, `osx` or `linux` (not tested), see below
     * the script will try to find your conda installation path
-    * you need to specify which QIIME 2 version you want to test against, e.g. to build for 2021.8 do (from `ci/recipe`):
+    * you need to specify which QIIME 2 version you want to test against, e.g. to build for 2021.8 do (from the `ci/recipe` directory):
       ```shell
       sh test_build.sh 2021.8 osx
       ```
