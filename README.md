@@ -14,6 +14,24 @@ need to adjust the following elements:
 
 Enjoy!
 
+### Development with git hooks
+To make your life a bit easier, you can use `git hooks` to automate certain tasks while working with Git (see [here](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) for more details).
+This repository contains two hooks in the _hooks/_ directory: a [pre-commit](./hooks/pre-commit.sh) hook and a [pre-push](./hooks/pre-push.sh) hook:
+* the pre-commit hook will automatically run linting tasks before any commit (i.e. on `git commit`)
+* the pre-push hook will automatically run the tests before pushing to the remote (i.e. on `git push`)
+
+In order to use those hooks, follow the steps described below:
+1. Create the following symlinks (the hooks live under `.git/hooks/` directory in every repository):
+```shell
+ln -s ../../hooks/pre-commit.sh .git/hooks/pre-commit
+ln -s ../../hooks/pre-push.sh .git/hooks/pre-push
+```
+2. Adjust permissions:
+```shell
+chmod +x hooks/pre-push.sh hooks/pre-commit.sh
+```
+3. For the hooks to work you need an active conda environment with [flake8](https://flake8.pycqa.org/en/latest/) and [q2lint](https://github.com/qiime2/q2lint) installed.
+
 ### Testing conda builds
 Follow these steps to test a conda build locally:
 1. Make sure to add the required dependencies in the [ci/recipe/meta.yaml](./ci/recipe/meta.yaml) file
