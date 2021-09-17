@@ -46,6 +46,5 @@ jobs:
       with:
         package-name: q2-plugin-name
         additional-tests: pytest --pyargs q2_plugin_name
-        # TODO: update this to `release` when tagging release
-        build-target: staged
+        build-target: dev
         library-token: ${{ secrets.LIBRARY_TOKEN }}
