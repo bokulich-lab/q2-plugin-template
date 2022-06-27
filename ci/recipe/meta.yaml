@@ -1,6 +1,5 @@
 {% set data = load_setup_py_data() %}
 {% set version = data.get('version') or 'placehold' %}
-{% set release = '.'.join(version.split('.')[:2]) %}
 
 package:
   name: q2-plugin-name
@@ -18,9 +17,14 @@ requirements:
     - setuptools
 
   run:
-    - qiime2 {{ release }}.*
+    - python {{ python }}
+    - qiime2 {{ qiime2_epoch }}.*
 
 test:
+  requires:
+    - pytest
+    - qiime2 >={{ qiime2 }}
+
   imports:
     - q2_plugin_name
     - qiime2.plugins.plugin_name
