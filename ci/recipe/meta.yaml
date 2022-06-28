@@ -22,12 +22,13 @@ requirements:
 
 test:
   requires:
-    - pytest
-    - qiime2 >={{ qiime2 }}
-
+    - coverage
+    - pytest-cov
   imports:
     - q2_plugin_name
     - qiime2.plugins.plugin_name
+  commands:
+    - pytest --cov q2_plugin_name --pyargs q2_plugin_name
 
 about:
   home: https://github.com/bokulich-lab/q2-plugin-name

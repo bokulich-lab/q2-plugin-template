@@ -51,18 +51,3 @@ To set up your dev environment, including the hooks, simply run `make dev` in an
 You don't need to do anything else - the hooks will be automatically executed whenever you commit.
 
 _Note:_ If, for whatever reason, you need to skip the hooks, you can append the `--no-verify` flag to the git command - the hooks won't be executed.
-
-### Testing conda builds
-Follow these steps to test a conda build locally:
-1. Make sure to add the required dependencies in the [ci/recipe/meta.yaml](./ci/recipe/meta.yaml) file
-2. Run the [test_build.sh](./ci/recipe/test_build.sh) script to attempt a local build:
-    * you can specify build platform, `osx` or `linux` (not tested), see below
-    * the script will try to find your conda installation path
-    * you need to specify which QIIME 2 version you want to test against, e.g. to build for 2021.8 do (from the `ci/recipe` directory):
-      ```shell
-      sh test_build.sh 2021.8 osx
-      ```
-Occasionally, when the build process got interrupted (by the user or by an error), you may need to clean up before running it again.
-To clean up, you should remove the following:
-* `testing-*/` - the entire directory containing the testing environment (where `*` stands for QIIME 2 version)
-* `env.yml` - environment specification file, fetched during the build test
