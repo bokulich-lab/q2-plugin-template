@@ -18,7 +18,9 @@ install: all
 	$(PYTHON) setup.py install
 
 dev: all
+	pip install pre-commit
 	pip install -e .
+	pre-commit install
 
 prep-dev-container: all
 	conda install mamba -qy -n base -c conda-forge

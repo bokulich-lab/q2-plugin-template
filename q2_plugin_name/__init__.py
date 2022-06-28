@@ -1,5 +1,5 @@
 # ----------------------------------------------------------------------------
-# Copyright (c) 2021, QIIME 2 development team.
+# Copyright (c) 2022, <developer name>.
 #
 # Distributed under the terms of the Modified BSD License.
 #
@@ -7,5 +7,6 @@
 # ----------------------------------------------------------------------------
 
 from ._version import get_versions
-__version__ = get_versions()['version']
+
+__version__ = get_versions()["version"]
 del get_versions
