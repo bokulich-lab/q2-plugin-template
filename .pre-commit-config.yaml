@@ -9,6 +9,9 @@ repos:
     rev: 5.10.1
     hooks:
       - id: isort
+        args:
+          - --profile
+          - black
         files: ^(.+)(?<!\_version)\.py$
   - repo: https://github.com/psf/black
     rev: 22.3.0
